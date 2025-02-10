@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 2px solid white;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Maze Escape Game</h1>
+    <canvas id="mazeCanvas" width="400" height="400"></canvas>
+    <div id="message">Use arrow keys to escape!</div>
+    
+    <script>
+        const canvas = document.getElementById("mazeCanvas");
+        const ctx = canvas.getContext("2d");
+        const gridSize = 40;
+        const rows = canvas.width / gridSize;
+        const cols = canvas.height / gridSize;
+        let player = { x: 0, y: 0 };
+        let exit = { x: rows - 1, y: cols - 1 };
+        
+        let maze = Array.from({ length: rows }, () => Array(cols).fill(1));
+        
+        function generateMaze() {
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < cols; j++) {
+                    maze[i][j] = Math.random() > 0.3 ? 0 : 1;
+                }
+            }
+            maze[0][0] = 0;
+            maze[rows - 1][cols - 1] = 0;
+        }
+        
+        function drawMaze() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < rows; i++) {
+                for (let j = 0; j < cols; j++) {
+                    ctx.fillStyle = maze[i][j] ? "black" : "white";
+                    ctx.fillRect(i * gridSize, j * gridSize, gridSize, gridSize);
+                }
+            }
+            ctx.fillStyle = "blue";
+            ctx.fillRect(player.x * gridSize, player.y * gridSize, gridSize, gridSize);
+            ctx.fillStyle = "red";
+            ctx.fillRect(exit.x * gridSize, exit.y * gridSize, gridSize, gridSize);
+        }
+        
+        function movePlayer(dx, dy) {
+            let newX = player.x + dx;
+            let newY = player.y + dy;
+            if (newX >= 0 && newX < rows && newY >= 0 && newY < cols && maze[newX][newY] === 0) {
+                player.x = newX;
+                player.y = newY;
+                drawMaze();
+                checkWin();
+            }
+        }
+        
+        function checkWin() {
+            if (player.x === exit.x && player.y === exit.y) {
+                document.getElementById("message").innerText = "You Escaped! 🎉";
+                document.removeEventListener("keydown", keydownHandler);
+            }
+        }
+        
+        function keydownHandler(event) {
+            switch (event.key) {
+                case "ArrowUp": movePlayer(0, -1); break;
+                case "ArrowDown": movePlayer(0, 1); break;
+                case "ArrowLeft": movePlayer(-1, 0); break;
+                case "ArrowRight": movePlayer(1, 0); break;
+            }
+        }
+        
+        document.addEventListener("keydown", keydownHandler);
+        generateMaze();
+        drawMaze();
+    </script>
+</body>
+</html>
