@@ -1,0 +1,24 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #222;
+    color: white;
+}
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.movie {
+    background: #333;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+}
+img {
+    width: 100%;
+    border-radius: 10px;
+}
