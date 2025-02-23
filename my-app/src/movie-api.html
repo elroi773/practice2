@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인기 영화 목록</title>
+    <title>영화 추천 사이트</title>
     <link rel="stylesheet" href="movie-api.css">
 </head>
 <body>
-    <h1>🎬 인기 영화 목록</h1>
-    <div class="movies" id="movies"></div>
-    
+
+    <h1>🎬 취향 맞춤 영화 추천</h1>
+    <label for="genreSelect">장르 선택:</label>
+    <select id="genreSelect"></select>
+    <div class="movies" id="moviesContainer"></div>
+
     <script src="movie-api.js"></script>
+
 </body>
 </html>
