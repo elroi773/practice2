@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네온 로그인 폼</title>
+    <link rel="stylesheet" href="neoneLogin.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>네온 로그인</h2>
+        <div class="input-group">
+            <input type="text" id="username" placeholder="아이디">
+            <p class="warning" id="userWarning">아이디를 입력하세요!</p>
+        </div>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="비밀번호">
+            <p class="warning" id="passWarning">비밀번호를 입력하세요!</p>
+        </div>
+        <button class="neon-btn" onclick="login()">로그인</button>
+        <p class="glow-text">계정이 없나요? 회원가입</p>
+    </div>
+
+    <script src="neoneLogin.js"></script>
+</body>
+</html>
