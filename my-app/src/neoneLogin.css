@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'GmarketSansMedium';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0d1117;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    text-align: center;
+    width: 320px;
+    position: relative;
+}
+
+.login-container h2 {
+    color: #00eaff;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+
+input:focus {
+    border-bottom: 2px solid #00eaff;
+    box-shadow: 0 0 10px #00eaff;
+}
+
+.neon-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #00eaff;
+    color: #0d1117;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-shadow: 0 0 5px #0ff;
+}
+
+.neon-btn:hover {
+    box-shadow: 0 0 15px #00eaff;
+    transform: scale(1.05);
+}
+
+.glow-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 경고 메시지 스타일 */
+.warning {
+    color: #ff4747;
+    font-size: 14px;
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* 로그인 성공 애니메이션 */
+.success {
+    font-size: 20px;
+    color: #00ff7f;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 10px #00ff7f;
+    animation: fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* 반응형 */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+    }
+}
