@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 성경 구절</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .verse-container {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0;
+            transform: rotateX(180deg) translateY(50px);
+            animation: appear 2s forwards, stay 3s 2s forwards, disappear 2s 5s forwards;
+        }
+        .verse-line {
+            display: block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: lineAppear 0.5s ease-in forwards;
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: rotateX(180deg) translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: rotateX(0deg) translateY(0);
+            }
+        }
+        @keyframes stay {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes disappear {
+            to {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+        }
+        @keyframes lineAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="bible-verse" class="verse-container"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const verseElement = document.getElementById("bible-verse");
+            const verses = [
+                { text: "내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라", author: "빌립보서 4장 13절" },
+                { text: "그러나 내가 가는 길을 그가 아시나니 그가 나를 단련하신 후에는 내가 순금 같이 되어 나오리라", author: "욥기 23장 10절" },
+                { text: "너희 모든 일을 사랑으로 행하라", author: "고린도전서 16장 14절" },
+                { text: "나의 도움은 천지를 지으신 여호와에게서로다", author: "시편 121장 2절" },
+                { text: "여호와는 네게 복을 주시고 너를 지키시기를 원하며", author: "민수기 6장 24절" },
+                { text: "우리가 사랑하는 것은 하나님께서 먼저 우리를 사랑하셨기 때문입니다", author: "요한일서 4장 19절" }
+            ];
+            const randomVerse = verses[Math.floor(Math.random() * verses.length)];
+            const lines = randomVerse.text.split(" ");
+            verseElement.innerHTML = lines.map((word, index) => `<span class='verse-line' style='animation-delay: ${index * 0.2}s'>${word}</span>`).join(" ") + "<br><strong> - " + randomVerse.author + "</strong>";
+        });
+    </script>
+</body>
+</html>
