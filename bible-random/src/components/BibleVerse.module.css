@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'KBIZHanmaumMyungjo';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KBIZHanmaumMyungjo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MBC1961GulimM';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/MBC1961GulimM.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #191919;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #191919;
+  text-align: center;
+}
+
+.cardContent {
+  font-family: 'KBIZHanmaumMyungjo';
+  font-size: 20px;
+  font-weight: bolder;
+  color: #fcfcfc;
+}
+
+.authorText {
+  font-family: 'MBC1961GulimM';
+  font-size: 15px;
+  color: #878787;
+  margin-bottom: 12px;
+  font-weight: lighter;
+}
+
+.text {
+  margin-bottom: 10px;
+}
