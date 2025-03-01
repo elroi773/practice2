@@ -10,7 +10,9 @@
     <h2>기도 제목을 입력하세요</h2>
     <form id="prayer-form">
         <input type="text" id="name" placeholder="이름" required>
-        
+        <label>
+            <input type="checkbox" id="anonymous"> 익명으로 남기기
+        </label>
         <textarea id="prayer" placeholder="기도 제목" required></textarea>
         <button onclick="goBack()">제출하기</button>
     </form>
