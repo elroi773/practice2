@@ -39,17 +39,24 @@ input, textarea {
     border: 1px solid #ccc;
     border-radius: 10px;
     font-size: 16px;
-    transition: border-color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+input:hover, textarea:hover {
+    border-color: #ffcc00;
+    background-color: #fffceb;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
 }
 
 input:focus, textarea:focus {
-    border-color: #ecea74;
+    border-color: #ffcc00;
     outline: none;
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.7);
 }
 
 /* 버튼 스타일 */
 button {
-    background-color: #ecea74;
+    background: linear-gradient(45deg, #ecea74, #f8b500);
     color: rgb(100, 94, 27);
     border: none;
     padding: 12px;
@@ -57,14 +64,34 @@ button {
     border-radius: 10px;
     font-size: 16px;
     font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: #e0d85e;
+    background: linear-gradient(45deg, #f8b500, #ffcc00);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+button:active {
+    transform: scale(0.95);
+    background: linear-gradient(45deg, #e09e00, #d6a800);
 }
 
 /* 리스트 스타일 */
 li {
     list-style: none;
+    padding: 8px;
+    margin: 5px 0;
+    background: rgba(255, 204, 0, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+li:hover {
+    background: rgba(255, 204, 0, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.3);
 }
