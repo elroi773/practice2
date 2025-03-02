@@ -4,38 +4,67 @@
     font-weight: normal;
     font-style: normal;
 }
-*{
-    font-family: 'MapoFlowerIsland';
+
+/* 기본 스타일 초기화 */
+* {
+    font-family: 'MapoFlowerIsland', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'MapoFlowerIsland';
     text-align: center;
     margin-top: 100px;
+    background-color: #f9f9f9;
 }
 
+/* 폼 스타일 */
 form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 100%;
+    max-width: 320px;
     margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    gap: 10px;
 }
 
+/* 입력 필드 및 텍스트 영역 */
 input, textarea {
-    margin: 10px 0;
-    padding: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
     border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out;
 }
 
+input:focus, textarea:focus {
+    border-color: #ecea74;
+    outline: none;
+}
+
+/* 버튼 스타일 */
 button {
     background-color: #ecea74;
     color: rgb(100, 94, 27);
     border: none;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
     border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
 }
 
-li{
+button:hover {
+    background-color: #e0d85e;
+}
+
+/* 리스트 스타일 */
+li {
     list-style: none;
 }
