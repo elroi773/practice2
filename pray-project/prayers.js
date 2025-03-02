@@ -5,14 +5,19 @@ document.addEventListener("DOMContentLoaded", function () {
         form.addEventListener("submit", async function (event) {
             event.preventDefault();
 
-            const name = document.getElementById("name").value;
+            let name = document.getElementById("name").value;
             const prayer = document.getElementById("prayer").value;
             const isAnonymous = document.getElementById("anonymous").checked;
+
+            // 익명 선택 시 name을 "익명"으로 설정
+            if (isAnonymous) {
+                name = "익명";
+            }
 
             const response = await fetch("http://localhost:3000/add-prayer", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, prayer, is_anonymous: isAnonymous }),
+                body: JSON.stringify({ name, prayer }),
             });
 
             if (response.ok) {
@@ -41,7 +46,7 @@ async function fetchPrayers() {
         const div = document.createElement("div");
         div.classList.add("prayer-card");
 
-        // 익명이면 이름을 표시하지 않고, 일반 사용자는 이름 표시
+        // 익명 처리된 기도 제목은 이름 없이 출력
         div.textContent = prayer.name === "익명" ? `🙏 ${prayer.prayer}` : `${prayer.name}: ${prayer.prayer}`;
 
         prayerContainer.appendChild(div);
