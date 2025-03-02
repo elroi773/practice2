@@ -4,18 +4,18 @@
     font-weight: normal;
     font-style: normal;
 }
-*{
+
+* {
     font-family: 'MapoFlowerIsland';
 }
-
-
 
 body {
-    font-family: 'MapoFlowerIsland';
     text-align: center;
     margin: 20px;
+    background-color: #fef9e7;
 }
 
+/* 폼 스타일 */
 form {
     display: flex;
     flex-direction: column;
@@ -23,26 +23,65 @@ form {
     margin: auto;
 }
 
+/* 입력 필드 & 텍스트 영역 */
 input, textarea {
     margin: 10px 0;
-    padding: 10px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
 }
 
+/* Hover 효과 */
+input:hover, textarea:hover {
+    border-color: #ffcc00;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+}
+
+/* Focus 효과 */
+input:focus, textarea:focus {
+    border-color: #ffcc00;
+    background-color: #fffceb;
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.8);
+    outline: none;
+}
+
+/* 버튼 스타일 */
 button {
-    background-color: #ecea74;
+    background: linear-gradient(45deg, #ecea74, #f8b500);
     color: rgb(100, 94, 27);
     border: none;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
     margin-top: 10px;
     border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Hover 시 그라디언트, 확대 */
+button:hover {
+    background: linear-gradient(45deg, #f8b500, #ffcc00);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 204, 0, 0.5);
+    color: #fff;
+}
+
+/* 클릭 시 눌리는 효과 */
+button:active {
+    transform: scale(0.95);
+    background: linear-gradient(45deg, #e09e00, #d6a800);
+}
+
+/* 기도 카드 스타일 */
 #prayer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    margin-top: 20px;
 }
 
 .prayer-card {
@@ -50,6 +89,18 @@ button {
     border-radius: 8px;
     padding: 15px;
     width: 300px;
-    background-color: #f9f9f9;
+    background-color: #fff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover 시 카드 확대 & 그림자 강조 */
+.prayer-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 4px 4px 15px rgba(255, 204, 0, 0.5);
+}
+
+/* 클릭 시 부드럽게 눌리는 효과 */
+.prayer-card:active {
+    transform: scale(0.97);
 }
