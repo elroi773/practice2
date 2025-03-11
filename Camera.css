@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'SSRONETHandwritten';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SSRONETHandwritten.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'SSRONETHandwritten';
+}
+
+body {
+    text-align: center;
+}
+
+video,
+canvas {
+    width: 100%;
+    max-width: 400px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.preview-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    max-width: 420px;
+}
+
+.selected-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+
+.preview-container img,
+.selected-container img {
+    width: 100px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.preview-container img.selected {
+    border: 2px solid red;
+}
+
+#timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    margin-top: 10px;
+}
+
+#finalResult {
+    display: none;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+
+#video {
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+}

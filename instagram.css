@@ -1,0 +1,5 @@
+
+body { text-align: center; font-family: Arial, sans-serif; }
+#preview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 20px; width: 300px; }
+.grid-img { width: 100px; height: 133px; }
+.download-btn { margin-top: 10px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
