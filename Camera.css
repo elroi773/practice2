@@ -4,72 +4,99 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 * {
-    font-family: 'SSRONETHandwritten';
+    font-family: 'GmarketSansMedium';
 }
 
 body {
+    font-family: 'Arial', sans-serif;
     text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
 }
 
-video,
-canvas {
+h1 {
+    font-size: 24px;
+    color: #444;
+}
+
+video {
     width: 100%;
     max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+#timer {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #ff5555;
 }
 
 button {
-    margin-top: 10px;
-    padding: 10px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    margin: 5px;
     font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff4040;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.preview-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5px;
-    max-width: 420px;
-}
-
-.selected-container {
+.preview-container, .selected-container {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
+    max-width: 400px;
 }
 
-.preview-container img,
-.selected-container img {
-    width: 100px;
+img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
     cursor: pointer;
-    border: 2px solid transparent;
+    transition: 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.preview-container img.selected {
-    border: 2px solid red;
+img:hover {
+    transform: scale(1.1);
 }
 
-#timer {
-    font-size: 24px;
-    font-weight: bold;
-    color: red;
-    margin-top: 10px;
+.selected {
+    border: 3px solid #ff6b6b;
 }
 
-#finalResult {
+canvas {
     display: none;
     margin-top: 20px;
-    border: 2px solid black;
-}
-
-#video {
-    transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
+    border: 2px solid #444;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
