@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let menu = "커피";
+        let menu2 = "에이드";
+        let menu3 = "스무디";
+
+        let order = prompt("어떤 음료를 주문하시겠습니까?" + "1 : " + menu + "2 : " + menu2 + "3 : " + menu3);
+        switch (order) {
+            case menu:
+                prompt("커피 나왔습니다. 가격은 100원 입니다");
+                break;
+            case menu2:
+                prompt("에이드 나왔습니다. 가격은 200원 입니다");
+                break;
+            case menu3:
+                prompt("스무디 나왔습니다. 가격은 300원 입니다");
+                break;
+            default:
+                prompt("제대로 골라주세요");
+        }
+
+        const num = parseInt(prompt("숫자를 입력하세요: "), 10);
+
+        for (let i = 7; i <= num * 7; i += 7) {
+            console.log(i);
+        }
+    </script>
+</body>
+
+</html>
