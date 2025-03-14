@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = prompt("숫자 입력");
+        if (num % 3 == 0) {
+            alert("3의 배수 입니다.");
+        } else {
+            alert("3의 배수가 아닙니다.");
+        }
+        let num1 = prompt("숫자 입력");
+        let result = (num1 % 2 === 0) ? "3의 배수" : "숫자가 아님";
+        console.log(result); 
+
+        let num2  = prompt("숫자 입력하기");
+        if(num2<=10){
+            if(num2>40){
+                let result1 = prompt("10이상 40미만 숫자 입니다");
+            }else{
+                let result1 = prompt("10이상이지만 40 이상의 숫자 입니다");
+            }
+        }
+
+        let num3 = prompt("첫번째 숫자 입력하기");
+        let num4 = prompt("두번째 숫자 입력하기");
+
+        if(num3<=10 || num4<=10){
+            if(num3>40 || num4>40){
+                prompt("두 숫자 모두 10 이상 40미만 입니다");
+            }
+        }
+
+        
+
+    </script>
+</body>
+
+</html>
