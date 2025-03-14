@@ -1,0 +1,31 @@
+body{
+    color:#4fec23;
+  }
+  @media(max-width:600px){
+    .cellphone{
+      color:red;
+    }
+  }
+  @media(min-width:600px) and (max-width:992px){
+    .tablet{
+      color:red;
+    }
+  }
+  
+  @media(min-width:992px) and (max-width:1024px){
+    .desktop{
+      color:red;
+    }
+  }
+  
+  @media(orientation:landscape){
+    body{
+      color:green;
+    }
+  }
+  
+  @media(orientation:portrait){
+    body{
+      color:yellow;
+    }
+  }
