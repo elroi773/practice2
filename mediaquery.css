@@ -1,31 +1,55 @@
+@font-face {
+  font-family: 'MarinesBold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2502-1@1.0/MarinesBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 body{
-    color:#4fec23;
+  color:#4fec23;
+  font-family: 'MarinesBold';
+
+}
+@media(max-width:600px){
+  .cellphone{
+    color:red;
   }
-  @media(max-width:600px){
-    .cellphone{
-      color:red;
-    }
+}
+@media(min-width:600px) and (max-width:992px){
+  .tablet{
+    color:red;
   }
-  @media(min-width:600px) and (max-width:992px){
-    .tablet{
-      color:red;
-    }
+}
+
+@media(min-width:992px) and (max-width:1024px){
+  .desktop{
+    color:red;
   }
-  
-  @media(min-width:992px) and (max-width:1024px){
-    .desktop{
-      color:red;
-    }
+}
+
+@media(orientation:landscape){
+  body{
+    color:green;
+    display:flex;
   }
-  
-  @media(orientation:landscape){
-    body{
-      color:green;
-    }
+}
+
+@media(orientation:portrait){
+  body{
+    color:yellow;
   }
-  
-  @media(orientation:portrait){
-    body{
-      color:yellow;
-    }
+}
+
+@media print{
+  body{
+    color:purple;
   }
+}
+
+
+@media all and (orientation:portrait) {
+  body{
+    color:mint;
+  }
+}
+
