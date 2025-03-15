@@ -1,0 +1,85 @@
+
+@font-face {
+    font-family: 'KakaoBigSans-ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2503@1.0/KakaoBigSans-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+*{
+    font-family: 'KakaoBigSans-ExtraBold';
+}
+body {
+    background: radial-gradient(circle at top, #1a1a2e, #16213e);
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+.card {
+    width: 300px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.glow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 255, 0.3));
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.card:hover .glow {
+    opacity: 1;
+}
+.icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: cyan;
+}
+.button {
+    background: cyan;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button:hover {
+    background: magenta;
+    color: white;
+}
+@keyframes neonGlow {
+    0% { box-shadow: 0 0 10px cyan; }
+    50% { box-shadow: 0 0 30px cyan, 0 0 50px magenta; }
+    100% { box-shadow: 0 0 10px cyan; }
+}
+.flash {
+    animation: neonGlow 0.5s ease-in-out;
+}
+.matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
