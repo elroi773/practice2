@@ -6,7 +6,6 @@ document.getElementById("glowButton").addEventListener("click", function() {
     }, 500);
 });
 
-// Matrix Rain Effect
 const canvas = document.querySelector(".matrix");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
