@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const generateTable = (num) => {
+            if (num <= 0) {
+                alert("올바른 숫자를 입력하세요.");
+                return;
+            }
+            let size = Math.ceil(Math.sqrt(num));
+            let table = "<table>";
+            let count = 1;
+
+            if(num%size ==0){
+
+                for (let i = 0; i < size; i++) {
+                    table += "<tr>";
+                    for (let j = 0; j < size; j++) {
+                        if (count <= num) {
+                            table += `<td>${count++}</td>`;
+                        } else {
+                            table += "<td></td>";
+                        }
+                    }
+                    table += "</tr>";
+                }
+                table += "</table>";
+            }else{
+                for (let i = 0; i < size; i++) {
+                    table += "<tr>";
+                    for (let j = 0; j < size; j++) {
+                        if (count <= num) {
+                            table += `<td>${count++}</td>`;
+                        } else {
+                            table += "<td></td>";
+                        }
+                    }
+                    table += "</tr>";
+                }
+                table += "</table>";
+            }
+
+            document.body.innerHTML = table;
+        };
+
+        generateTable(+prompt("생성할 셀 개수를 입력하세요:"));
+
+    </script>
+
+    </script>
+</body>
+
+</html>

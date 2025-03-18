@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const generateTable = (num) => {
+            if (num <= 0 || isNaN(num)) {
+                alert("올바른 숫자를 입력하세요.");
+                return;
+            }
+
+            let size = Math.ceil(Math.sqrt(num));
+            let table = "<table>";
+            let count = 1;
+            
+            for (let i = 0; i < size; i++) {
+                table += "<tr>";
+                for (let j = 0; j < size; j++) {
+                    if (count <= num) {
+                        table += `<td>${count++}</td>`;
+                    } else {
+                        table += "<td></td>";
+                    }
+                }
+                table += "</tr>";
+            }
+            table += "</table>";
+            
+            document.body.innerHTML = table;
+        };
+
+        let userInput = prompt("생성할 셀 개수를 입력하세요:");
+        generateTable(Number(userInput));
+
+    </script>
+</body>
+
+</html>

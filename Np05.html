@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const calculator = (a, b, operator) => {
+            switch (operator) {
+                case '+':
+                    return a + b;
+                case '-':
+                    return a - b;
+                case '*':
+                    return a * b;
+                case '/':
+                    return b !== 0 ? a / b : "0으로 나눌 수 없습니다.";
+                default:
+                    return "올바른 연산자를 입력하세요.";
+            }
+        };
+
+        console.log(calculator(10, 5, '+')); 
+        console.log(calculator(7, 2, '-'));  
+        console.log(calculator(4, 3, '*'));  
+        console.log(calculator(8, 2, '/'));  
+        console.log(calculator(5, 0, '/'));  
+
+    </script>
+</body>
+
+</html>
