@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 소개 카드</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        @font-face {
+            font-family: 'DungGeunMo';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            font-family: 'DungGeunMo';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6e8efb, #bf91f7);
+        }
+
+        .me-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 50px;
+            width: 80%;
+            max-width: 600px;
+            height: 90vh;
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            transition: 0.3s ease-in-out;
+            border: 3px solid transparent;
+            background-clip: padding-box, border-box;
+            border-image: linear-gradient(45deg, #ff7eb3, #fdff8b) 1;
+            animation: glow 2s infinite alternate;
+            border-radius: 10px;
+        }
+
+        .me-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .me-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: linear-gradient(45deg, #ff7eb3, #fdff8b) 1;
+        }
+
+        .me-container h3 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        .me-container h4 {
+            color: #fffcba;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .me-container p {
+            color: white;
+            font-size: 16px;
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #fffcba;
+        }
+
+        
+        @media (max-width: 768px) {
+            .me-container {
+                width: 90%;
+                height: auto;
+                padding: 30px;
+            }
+
+            .me-container img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .me-container h3 {
+                font-size: 24px;
+            }
+
+            .me-container h4,
+            .me-container p {
+                font-size: 14px;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0px 0px 15px rgba(255, 126, 179, 0.5);
+            }
+            100% {
+                box-shadow: 0px 0px 25px rgba(255, 126, 179, 0.8);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="me-container">
+        <img src="img/me.jpg" alt="나">
+        <h3>김이레이긔</h3>
+        <h4>2008.04.23 | INTP</h4>
+        <p>HI~~~~ NICE MEET U~~~<br>
+            관심분야 : FE 개발자, 스마트팜
+        </p>
+        <p>다연쌤 사랑해연~~</p>
+    </div>
+</body>
+
+</html>
