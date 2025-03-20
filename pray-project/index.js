@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchPrayers(); // 페이지 로드 시 기도제목 목록 불러오기
 });
 
+
 function goNext() {
     window.location.href = "prayers.html";
 }
