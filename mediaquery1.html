@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 단위와 텍스트 처리 실습</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSS 단위와 텍스트 처리 실습</h1>
+  
+  <!-- 1. CSS 단위 비교 예제 -->
+  <section id="css-units">
+    <h2>1. CSS 단위 비교</h2>
+    
+    <div class="units-container">
+      <div class="example-box">
+        <div class="label">px 단위 (픽셀)</div>
+        <div class="desc">절대 단위, 고정된 크기</div>
+        <div class="px-box">
+          이 박스는 font-size: 16px, padding: 20px로 설정되었습니다.
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">em 단위 (부모 기준)</div>
+        <div class="desc">상대 단위, 부모 요소의 폰트 크기 기준</div>
+        <div class="em-box">
+          이 박스는 font-size: 1em, padding: 1.25em으로 설정되었습니다.
+          <div class="nested-em">
+            중첩된 em 요소 (부모 크기의 영향을 받음)
+            <div class="child">
+              자식 요소 (font-size: 1.2em)
+              <div class="grandchild">
+                손자 요소 (font-size: 1.2em)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">rem 단위 (루트 기준)</div>
+        <div class="desc">상대 단위, html(루트) 요소의 폰트 크기 기준</div>
+        <div class="rem-box">
+          이 박스는 font-size: 1rem, padding: 1.25rem로 설정되었습니다.
+          <div class="nested-rem">
+            중첩된 rem 요소 (루트 크기의 영향만 받음)
+            <div class="child">
+              자식 요소 (font-size: 1.2rem)
+              <div class="grandchild">
+                손자 요소 (font-size: 1.2rem)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 뷰포트 단위 예제 -->
+  <section id="viewport-units">
+    <h2>뷰포트 단위 비교</h2>
+    
+    <div class="viewport-container">
+      <div class="example-box">
+        <div class="label">vh 단위 (Viewport Height)</div>
+        <div class="desc">뷰포트 높이의 1%</div>
+        <div class="vh-box">
+          height: 20vh
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">svh 단위 (Small Viewport Height)</div>
+        <div class="desc">동적 뷰포트 높이 중 가장 작은 값의 1%</div>
+        <div class="svh-box">
+          height: 20svh
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">dvh 단위 (Dynamic Viewport Height)</div>
+        <div class="desc">현재 뷰포트 상태의 1%</div>
+        <div class="dvh-box">
+          height: 20dvh
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 2. 줄바꿈 속성 예제 -->
+  <section id="line-breaks">
+    <h2>2. 줄바꿈 속성 비교</h2>
+    
+    <div class="linebreak-container">
+      <div class="example-box">
+        <div class="label">word-break: normal (기본값)</div>
+        <div class="linebreak-example normal">
+          이것은normal속성이적용된텍스트입니다.Thisisaverylongwordthatmightbreakthedesign. 일반적인 줄바꿈 규칙이 적용됩니다.
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">word-break: break-all</div>
+        <div class="linebreak-example break-all">
+          이것은break-all속성이적용된텍스트입니다.Thisisaverylongwordthatmightbreakthedesign. 모든 문자에서 줄바꿈이 가능합니다.
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">word-break: keep-all</div>
+        <div class="linebreak-example keep-all">
+          이것은 keep-all 속성이 적용된 텍스트입니다. 한글은 단어 사이에서만 줄바꿈됩니다. Thisisaverylongwordthatmightbreakthedesign.
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">white-space: nowrap</div>
+        <div class="linebreak-example nowrap">
+          이것은 nowrap 속성이 적용된 텍스트입니다. 줄바꿈이 되지 않고 옆으로 계속 이어집니다. 스크롤하여 모든 내용을 확인할 수 있습니다.
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">overflow-wrap: break-word</div>
+        <div class="linebreak-example break-word">
+          이것은 break-word 속성이 적용된 텍스트입니다. Thisisaverylongwordthatmightbreakthedesign. 단어가 너무 길 경우에만 단어 내에서 줄바꿈합니다.
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">한국어에 최적화된 설정 (keep-all + break-word)</div>
+        <div class="linebreak-example keep-all-break-word">
+          이것은 word-break: keep-all과 overflow-wrap: break-word가 함께 적용된 텍스트입니다. 한글은 단어 단위로 줄바꿈되지만, Thisisaverylongwordthatmightbreakthedesign과 같은 긴 영단어는 필요시 줄바꿈됩니다.
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 3. 텍스트 말줄임 예제 -->
+  <section id="text-ellipsis">
+    <h2>3. 텍스트 말줄임 처리</h2>
+    
+    <div class="ellipsis-container">
+      <div class="example-box">
+        <div class="label">한 줄 말줄임</div>
+        <div class="ellipsis-example single-line-ellipsis">
+          이것은 한 줄로 표시되는 텍스트입니다. 내용이 너무 길어 컨테이너를 벗어나면 말줄임표(...)로 처리됩니다. 말줄임표가 정확히 어떻게 표시되는지 확인해보세요.
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">두 줄 말줄임</div>
+        <div class="ellipsis-example two-line-ellipsis">
+          이것은 두 줄까지만 표시되는 텍스트입니다. 내용이 두 줄을 초과하면 말줄임표(...)로 처리됩니다. -webkit-line-clamp: 2 속성을 사용해 구현합니다. 이 예제를 통해 여러 줄 텍스트 처리 방법을 확인해보세요. 이 내용은 두 줄을 넘어가기 때문에 말줄임표로 처리됩니다.
+        </div>
+      </div>
+      
+      <div class="example-box">
+        <div class="label">세 줄 말줄임</div>
+        <div class="ellipsis-example three-line-ellipsis">
+          이것은 세 줄까지만 표시되는 텍스트입니다. 내용이 세 줄을 초과하면 말줄임표(...)로 처리됩니다. -webkit-line-clamp: 3 속성을 사용해 구현합니다. 이 예제를 통해 여러 줄 텍스트 처리 방법을 확인해보세요. 이 내용은 세 줄을 넘어가기 때문에 말줄임표로 처리됩니다. 추가적인 내용은 보이지 않고 말줄임표로 대체됩니다. 실제 프로젝트에서 자주 사용하는 패턴입니다.
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 4. 실전 카드 UI 예제 -->
+  <section id="card-ui">
+    <h2>4. 실전 카드 UI 예제</h2>
+    
+    <div class="cards-container">
+      <div class="card">
+        <div class="card-image">이미지 영역</div>
+        <div class="card-content">
+          <div class="card-title">카드 제목 - 한 줄로 말줄임 처리</div>
+          <div class="card-description">
+            이 카드 설명은 세 줄까지만 표시되며, 그 이상은 말줄임표로 처리됩니다. 반응형 웹에서 텍스트 처리의 중요성을 보여주는 실전 예제입니다. CSS의 다양한 단위와 줄바꿈 속성을 적절히 활용하면 다양한 화면 크기에서도 일관된 디자인을 유지할 수 있습니다.
+          </div>
+          <button class="card-button">더 보기</button>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-image">이미지 영역</div>
+        <div class="card-content">
+          <div class="card-title">이 제목은 너무 길어서 한 줄을 초과하는 경우 말줄임표로 처리됩니다</div>
+          <div class="card-description">
+            word-break: keep-all과 overflow-wrap: break-word 조합으로 한국어는 단어 단위로, 영어의 긴 단어는 필요시 줄바꿈됩니다. Thisisaverylongwordthatmightbreakthedesign도 적절히 처리됩니다.
+          </div>
+          <button class="card-button">더 보기</button>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-image">이미지 영역</div>
+        <div class="card-content">
+          <div class="card-title">rem 단위로 구현된 반응형 카드</div>
+          <div class="card-description">
+            이 카드의 폰트 크기와 여백 등은 모두 rem 단위로 구현되어 있어, 화면 크기 변화에 일관되게 대응합니다. 미디어 쿼리를 통해 작은 화면에서는 html의 font-size를 14px로 조정하여 전체적인 크기를 줄입니다.
+          </div>
+          <button class="card-button">더 보기</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer style="margin-top: 40px; padding: 20px; background-color: #f5f5f5; text-align: center; border-radius: 5px;">
+    <p>CSS 단위와 텍스트 처리 실습 - 2025</p>
+  </footer>
+</body>
+</html>
