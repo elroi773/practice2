@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="result">
+        <li onclick="changeBg('green')">green</li>
+        <li onclick="changeBg('orange')">orange</li>
+        <li onclick="changeBg('purple')">purple</li>
+    </ul>
+    <p id="counter">0</p>
+    <button onclick="up()"></button>
+
+    <p id="counter1">0</p>
+    <button onclick="down()"></button>
+
+    <script>
+        function changeBg(color){
+            const ulElement = document.querySelector("#result");
+            ulElement.style.backgroundColor=color;
+        }
+
+        let count = 0;
+        function up(){
+            count++;
+            document.getElementById("counter").innerText = count;
+        }
+
+        let count1 = 0;
+        function down(){
+            count--;
+            document.getElementById("counter1").innerText = count;
+        }
+    </script>
+</body>
+</html>
