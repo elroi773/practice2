@@ -57,3 +57,7 @@ async function fetchPrayers() {
 function goBack() {
     window.location.href = "index.html";
 }
+
+
+
+
