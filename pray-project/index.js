@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
-    
     // 기도제목 목록 가져오기
     async function fetchPrayers() {
         const response = await fetch("http://localhost:3000/get-prayers");
@@ -61,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
             prayerList.appendChild(li);
         });
     }
-
     fetchPrayers(); // 페이지 로드 시 기도제목 목록 불러오기
 });
 
