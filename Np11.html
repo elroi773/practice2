@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="hideElement()">숨기기</button>
+    <div id="box" style="width:100px; height:100px; background-color:red;"></div>
+    <br>
+    <button onclick="appearElement()">나타내기</button>
+    <div id="box1" style="width:100px; height:100px; background-color:red;"></div>
+    <br>
+    <button onclick="hideAndAppearElement()">숨기고 나타내기</button>
+    <div id="box2" style="width:100px; height:100px; background-color:red;"></div>
+    
+
+    <script>
+        function hideElement() {
+            document.getElementById("box").style.display = "none";
+        }
+
+        document.getElementById("box1").style.display = "none";
+
+        function appearElement() {
+            document.getElementById("box1").style.display = "block";
+        }
+
+        let count = 0; // 전역 변수 선언
+
+        function hideAndAppearElement() {
+            count++;
+            let box = document.getElementById("box2");
+
+            if (count % 2 === 0) {
+                box.style.display = "none";
+            } else {
+                box.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>
