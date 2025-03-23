@@ -185,8 +185,8 @@ const quotes = [
 function displayDailyQuote() {
     const today = new Date();
     const dayIndex = today.getDate() % quotes.length; 
-    const quote = quotes[dayIndex].text.replace(/\n/g, "<br>");
-    const author = quotes[dayIndex].author;
+    const quote = quotes[dayIndex].text1.replace(/\n/g, "<br>");
+    const author = quotes[dayIndex].text2;
 
     document.getElementById("quote").innerHTML = quote;
     document.getElementById("author").textContent = author;
