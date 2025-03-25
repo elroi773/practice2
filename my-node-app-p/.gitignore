@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+
+# Build directory
+build/
+
+# Logs
+*.log
+
+# .env files for sensitive data
+.env
