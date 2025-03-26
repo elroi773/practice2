@@ -1,79 +1,78 @@
 import { useState } from "react";
 import "./Table.css";
 
-// 페이지당 보여줄 행 개수
 const pageSize = 5;
+const columns = ["Vehicle Id", "Date", "Location", "Progress", "Status", "Active", "Actions"];
 
-// 테이블 컬럼 정의
-const columns = ["Vehicle Id", "Progress", "Status", "Active", "Actions"];
-
-// 더미 데이터 (UI 테스트용)
-const rows = [
-    ["7430231", "100%", "Available", "✔", "⋮"],
-    ["7430232", "75%", "In Progress", "✔", "⋮"],
-    ["7430233", "50%", "Pending", "✖", "⋮"],
-    ["7430234", "25%", "Delayed", "✔", "⋮"],
-    ["7430235", "0%", "Not Started", "✖", "⋮"],
+const sampleData = [
+    { id: "7430231", date: "2025-03-26", location: "Seoul", progress: 100, status: "available", active: true },
+    { id: "7430232", date: "2025-03-25", location: "Busan", progress: 75, status: "in transit", active: false },
+    { id: "7430233", date: "2025-03-24", location: "Incheon", progress: 50, status: "maintenance", active: true },
+    { id: "7430234", date: "2025-03-23", location: "Daegu", progress: 25, status: "repair", active: false },
+    { id: "7430235", date: "2025-03-22", location: "Gwangju", progress: 10, status: "available", active: true }
 ];
 
-// ✅ 페이지네이션 컴포넌트
-const Pagination = ({ pageNumber, totalPages, totalRows, goToPage }) => {
-    return (
-        <footer className="table-footer">
-            <div className="table-pagination">
-                {[...Array(totalPages)].map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => goToPage(index + 1)}
-                        disabled={pageNumber === index + 1}
-                        className={pageNumber === index + 1 ? "active" : ""}
-                    >
-                        {index + 1}
-                    </button>
-                ))}
-            </div>
-            <p>
-                Viewing{" "}
-                <em>
-                    {pageNumber === 1 ? 1 : (pageNumber - 1) * pageSize + 1}-
-                    {Math.min(pageNumber * pageSize, totalRows)}
-                </em>{" "}
-                of <em>{totalRows}</em> rows
-            </p>
-        </footer>
-    );
-};
-
-// ✅ 메인 Table 컴포넌트
-export const Table = () => {
+const Table = () => {
     const [pageNumber, setPageNumber] = useState(1);
-    const totalPages = Math.ceil(rows.length / pageSize);
-    const goToPage = (page) => setPageNumber(page);
-
-    // 현재 페이지 데이터 가져오기
-    const paginated = rows.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
+    const [data, setData] = useState(sampleData);
+    const [search, setSearch] = useState("");
+    const [sortColumn, setSortColumn] = useState(null);
+    const [sortOrder, setSortOrder] = useState("asc");
+    
+    const handleSearch = (e) => setSearch(e.target.value.toLowerCase());
+    
+    const handleSort = (column) => {
+        const newOrder = sortColumn === column && sortOrder === "asc" ? "desc" : "asc";
+        setSortColumn(column);
+        setSortOrder(newOrder);
+        setData([...data].sort((a, b) => newOrder === "asc" ? a[column] > b[column] ? 1 : -1 : a[column] < b[column] ? 1 : -1));
+    };
+    
+    const filteredData = data.filter(row =>
+        Object.values(row).some(value => value.toString().toLowerCase().includes(search))
+    );
+    
+    const totalPages = Math.ceil(filteredData.length / pageSize);
+    const paginated = filteredData.slice((pageNumber - 1) * pageSize, pageNumber * pageSize);
 
     return (
-        <>
+        <div>
+            <input type="text" placeholder="Search..." value={search} onChange={handleSearch} className="table-search" />
             <table className="table">
                 <thead>
                     <tr>
-                        {columns.map((column, index) => (
-                            <th key={index}>{column}</th>
+                        {columns.map(column => (
+                            <th key={column} onClick={() => handleSort(column.toLowerCase())}>
+                                {column} {sortColumn === column.toLowerCase() ? (sortOrder === "asc" ? "▲" : "▼") : ""}
+                            </th>
                         ))}
                     </tr>
                 </thead>
                 <tbody>
-                    {paginated.map((row, rowIndex) => (
-                        <tr key={rowIndex}>
-                            {row.map((cell, cellIndex) => (
-                                <td key={cellIndex}>{cell}</td>
-                            ))}
+                    {paginated.map((row, index) => (
+                        <tr key={index}>
+                            <td>{row.id}</td>
+                            <td>{row.date}</td>
+                            <td>{row.location}</td>
+                            <td>{row.progress}%</td>
+                            <td>{row.status}</td>
+                            <td>{row.active ? "✅" : "❌"}</td>
+                            <td>
+                                <button className="edit">Edit</button>
+                                <button className="delete">Delete</button>
+                                <button className="view">View</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            <Pagination pageNumber={pageNumber} totalPages={totalPages} totalRows={rows.length} goToPage={goToPage} />
-        </>
+            <div className="table-footer">
+                <button disabled={pageNumber === 1} onClick={() => setPageNumber(pageNumber - 1)}>Prev</button>
+                <span>Page {pageNumber} of {totalPages}</span>
+                <button disabled={pageNumber === totalPages} onClick={() => setPageNumber(pageNumber + 1)}>Next</button>
+            </div>
+        </div>
     );
 };
+
+export default Table;
