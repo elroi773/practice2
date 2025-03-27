@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 마우스를 올리면 텍스트 변경 -->
+    <p id = "hovertext" onmouseover="changeText(true)" onmouseout="changeText(false)">여기에 마우스를 올려보세요</p>
+    <script>
+        function changeText(flag){
+            if (flag){
+                document.getElementById("hovertext").innerText="마우스를 올렸습니다";
+            }else{
+                document.getElementById("hovertext").innerText="마우스를 내렸습니다";
+            }
+        }
+    </script>
+
+    <!-- 이미지 어쩌고 -->
+    <img src="img/him.jpg" width="200" id="hoverImg" onmouseover="changeImg(true)" onmouseout="changeImg(false)">
+    <script>
+        function changeImg(flag){
+            if(flag){
+                document.getElementById("hoverImg").src="img/him2.jpg"
+            }else{
+                document.getElementById("hoverImg").src="img/him.jpg"                
+            }
+        }
+    </script>
+    <!-- 버튼 클릭시 배경색을 랜덤하게 변경 -->
+    <br>
+    <button onclick="changeRandomcolor()">배경색 변경</button>
+    <script>
+        function changeRandomcolor(){
+            let colors=["red","blue","green","yellow","pink"];
+            let randomColor= colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+    <br>
+
+    <!-- 입력 값 변경 시 알림 표시  -->
+
+    <input type="text" oninput="alert('ㅎㅇ')">
+    
+    <!-- 마우스 이동 좌표 표시 -->
+    <br>
+    <p id="cur">마우스 이동</p>
+    <script>
+        document.addEventListener("mousemove",function(event){
+            document.getElementById("cur").innerText = `X : ${event.clientX}, Y : ${event.clientY} `;
+        });
+        //어떤 이벤트를 발생하면 추가하는 함수 인자를 두개는 넣어야 함 
+    </script>
+
+    <!-- 리스트 항목 더블 클릭시 삭제  -->
+    <ul id="myList">
+        <li ondblclick="removeItem(this)">찹쌀밥</li>
+        <li ondblclick="removeItem(this)">꽃떡국</li>
+        <li ondblclick="removeItem(this)">볼어묵볶음</li>
+        <li ondblclick="removeItem(this)">족발야채무침</li>
+        <li ondblclick="removeItem(this)">아망치샐러드</li>
+    </ul>
+
+    <script>
+        function removeItem(element){
+            element.remove();
+        }
+    </script>
+    <br>
+
+    <!-- 사용자의 입력값을 리스트에 추가 -->
+    <input type="text" id="userInput">
+    <button onclick="addToList()">추가</button>
+    <ul id="itemList"></ul>
+    <script>
+        function addToList(){
+            let input = document.getElementById("userInput").value;
+            if(input.trim() != ""){
+                let li = document.createElement("li");//<li></li>
+                li.innerText = input;//<li> 값 </li>
+                li.setAttribute("ondbclcik","removeItem(this)");
+                document.getElementById("itemList").appendChild(li);
+                //<ul>자식 요소 넣기, 자식 2 요소 넣기 </ul>
+                document.getElementById("userInput").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
