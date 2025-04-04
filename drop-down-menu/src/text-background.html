@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #3a3a3a;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .splash-container {
+      position: relative;
+    }
+
+    .splash-text {
+      text-align: center;
+      font-size: 50px;
+      opacity: 0;
+      transform: translateY(-100px);
+      transition: opacity 1s, transform 1s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .smoke {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #ca9fff;
+      border-radius: 50%;
+      transform: scale(1);
+      animation: smokeAnimation 1s ease-out;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes smokeAnimation {
+      0% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(30);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="splash-container" id="container">
+    <h1 class="splash-text" id="splashText">Welcome to My Website</h1>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const splashText = document.getElementById('splashText');
+      const container = document.getElementById('container');
+
+      splashText.style.opacity = '1';
+      splashText.style.transform = 'translateY(0)';
+
+      const smoke = document.createElement('div');
+      smoke.classList.add('smoke');
+
+      const x = container.clientWidth / 2 - 15; // 15 = 반지름 보정
+      const y = container.clientHeight / 2 - 15;
+
+      smoke.style.left = `${x}px`;
+      smoke.style.top = `${y}px`;
+
+      container.appendChild(smoke);
+
+      setTimeout(() => {
+        smoke.remove();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
