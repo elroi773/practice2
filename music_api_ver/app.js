@@ -10,8 +10,8 @@ const moodToGenres = {
   };
   
   // 🔑 클라이언트 ID와 시크릿 (직접 넣어야 함! 보안 주의!!)
-  const clientId = "5cc81baedb7f48c586190ca5c462bd88";
-  const clientSecret = "089dd32f162047d7b7bafb7518eb05f7";
+  const clientId = "id";
+  const clientSecret = "secret";
   
   // 🎟️ 토큰 받아오기
   async function getAccessToken() {
