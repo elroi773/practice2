@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>기분별 노래 추천</title>
+  <link rel="stylesheet" href="music_api_ver.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎧 오늘의 기분은?</h1>
+    <select id="moodSelect">
+      <option value="">-- 기분을 선택하세요 --</option>
+      <option value="이별">이별</option>
+      <option value="기쁨">기쁨</option>
+      <option value="설렘">설렘</option>
+      <option value="우울">우울</option>
+      <option value="에너지">에너지</option>
+    </select>
+    <button id="recommendBtn">추천 받기</button>
+    <div id="recommendation"></div>
+  </div>
+
+  <script src="music_api_ver.js"></script>
+</body>
+</html>
