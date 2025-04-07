@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>기분별 노래 추천</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🎧 기분에 따라 듣는 음악</h1>
+  <!-- index.html 안에 버튼들 -->
+    <button onclick="getRecommendations('설렘')">설렘</button>
+    <button onclick="getRecommendations('기쁨')">기쁨</button>
+    <button onclick="getRecommendations('이별')">이별</button>
+    <button onclick="getRecommendations('행복')">행복</button>
+
+    <div id="recommendations"></div>
+
+    <!-- JS 연결 -->
+    <script src="app.js"></script>
+
+</body>
+</html>
