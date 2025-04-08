@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Search Box</title>
+
+  <!-- Font Awesome 아이콘 불러오기 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 25px;
+      border: 3px solid #8c52ff;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      transition: width 0.5s ease;
+      overflow: hidden;
+    }
+
+    form.expanded {
+      width: 280px;
+    }
+
+    input[type="search"] {
+      flex: 1;
+      height: 100%;
+      padding: 0 20px;
+      font-size: 1em;
+      border: none;
+      outline: none;
+      display: none;
+      background-color: transparent;
+    }
+
+    form.expanded input[type="search"] {
+      display: block;
+    }
+
+    button {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 0;
+      width: 42.5px;
+      height: 42.5px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      color: #8c52ff;
+      font-size: 1.2em;
+    }
+
+    form.expanded button {
+      background-color: #8c52ff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <form onsubmit="return false;">
+    <input type="search" placeholder="Search here ..." />
+    <button type="submit" id="searchBtn">
+      <i class="fas fa-search"></i>
+    </button>
+  </form>
+
+  <script>
+    const form = document.querySelector('form');
+    const searchBtn = document.getElementById('searchBtn');
+    const input = form.querySelector('input');
+
+    form.addEventListener('mouseenter', () => {
+      form.classList.add('expanded');
+    });
+
+    form.addEventListener('mouseleave', () => {
+      if (!input.value) {
+        form.classList.remove('expanded');
+      }
+    });
+  </script>
+</body>
+</html>
