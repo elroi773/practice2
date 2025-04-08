@@ -18,3 +18,7 @@ div{
     opacity: 0;
     transition: all 0.5s;
 }
+
+h1{
+    font-size: large;
+}
