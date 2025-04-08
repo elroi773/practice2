@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dark Mode Toggle</title>
+  <style>
+    :root {
+      --bg-color: white;
+      --text-color: black;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: white;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: 0.3s;
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+
+    .them-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .them-switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider::before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: aqua;
+    }
+
+    input:checked + .slider::before {
+      transform: translateX(26px);
+    }
+
+    .slider::after {
+      content: "😻";
+      position: absolute;
+      left: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider::after {
+      content: "😊";
+      left: 31px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label class="them-switch">
+      <input type="checkbox" id="them-toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <script>
+    const themToggle = document.getElementById('them-toggle');
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themToggle.checked = true;
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      themToggle.checked = false;
+    }
+
+    themToggle.addEventListener('change', toggleTheme);
+
+    function toggleTheme() {
+      if (themToggle.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+  </script>
+</body>
+</html>
