@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Playlist</title>
+  <link rel="stylesheet" href="favsong.css">
+  <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1>My PlayList</h1>
+
+    <ul class="playlist" id="playlist">
+      <li data-title="오늘만 I luv u" data-src="./audio/오늘만iluvu.mp3"
+        data-lyrics="그날 이후로 난 이렇게 살아\n웃기지 그런데\n오늘만 I love you  愛してる 사랑해라 말하고\n말하고 후회하면 좀 괜찮을까\nLove u!">
+        <div class="track-info">
+          <button class="play-btn"></button>
+          <span>오늘만 I luv u</span>
+        </div>
+      </li>
+
+      <li data-title="Don't hang up" data-src="./audio/끊었어Don'thangup.mp3"
+        data-lyrics="Oh baby tell me why\n너가 클럽에서 나옴 어떡해\n우리 분명 어제 분위기 꽤 좋았잖아">
+        <div class="track-info">
+          <button class="play-btn"></button>
+          <span>Don't hang up</span>
+        </div>
+      </li>
+
+      <li data-title="Day and Night" data-src="./audio/DayandNight.mp3"
+        data-lyrics="미소 짓는 옛 추억 같이\nDay and night\n우린 그 거리 만큼\n먼 길을 돌아 만나진 걸\n꼭 안고 싶어\n네 지친 하루가 쉴 수 있는\n꼭 나였으면 해">
+        <div class="track-info">
+          <button class="play-btn"></button>
+          <span>Day and Night</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="now-playing" id="nowPlaying">Now Playing: None</div>
+    <audio id="audioPlayer" controls></audio>
+    <div class="lyrics" id="lyricsDisplay">Select a song to see the lyrics.</div>
+  </div>
+
+  <script src="favsong.js"></script>
+</body>
+
+</html>
