@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Ownglyph_wiseelist-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2501-1@1.1/Ownglyph_wiseelist-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  /* 기본 설정 */
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #ffdce0, #ffe7ec);
+    color: #2c2c2c;
+}
+
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* 제목 */
+h1 {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* 플레이리스트 */
+.playlist {
+    list-style: none;
+    padding: 0;
+}
+
+.playlist li {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+}
+
+.playlist li:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 트랙 정보 */
+.track-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.track-info span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+/* 재생 버튼 */
+.play-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #222;
+    mask: url('img/play-icon.svg') no-repeat center;
+    -webkit-mask: url('img/play-icon.svg') no-repeat center;
+    mask-size: 60%;
+    -webkit-mask-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.play-btn:hover {
+    background-color: #ff6f91;
+}
+
+/* 현재 재생 중 표시 */
+.now-playing {
+    margin-top: 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #444;
+    padding-left: 10px;
+}
+
+/* 오디오 플레이어 */
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* 가사 */
+.lyrics {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-family: 'Shadows Into Light', cursive;
+    white-space: pre-line;
+    line-height: 1.8;
+    color: #3c3c3c;
+    transition: opacity 0.6s ease;
+}
+
+/* 재생 중 가사 강조 */
+.lyrics.active {
+    opacity: 1;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
