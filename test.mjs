@@ -37,3 +37,39 @@ list.insertLast(79);// list.insertAt(2,79);
 list.insertLast(80);// list.insertAt(3,80);
 
 list.printAll();
+
+console.log("===== deleteAt() 호출 =====");
+
+list.deleteAt(2);
+list.printAll();
+
+list.deleteAt(0);
+list.printAll();
+
+
+list.insertLast(81);
+list.insertLast(82);
+list.insertLast(83);
+
+list.printAll();
+
+console.log("===== deleteLast() 호출 =====");
+list.deleteLast();
+list.deleteLast();
+list.deleteLast();
+list.deleteLast();
+
+list.printAll();
+
+
+list.insertLast(84);
+list.insertLast(85);
+list.insertLast(86);
+
+
+
+console.log("===== getNodeAt() 호출 =====");
+console.log(list.getNodeAt(1));
+console.log(list.getNodeAt(3));
+
+

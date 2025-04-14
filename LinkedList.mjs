@@ -60,6 +60,46 @@ class LinkedList{
     insertLast(data){
         this.insertAt(this.count , data);
     }
-}
+
+    deleteAt(index){
+        if(index > this.count | index < 0){
+            throw new Error("범위를 넘어갔습니다");
+        }
+        let currentNode = this.head;
+        //첫번째 노드 가리킴
+        if(index == 0){
+            let deleteNode = this.head;
+            this.head = this.head.next; //curent.next도 가능 ~~~
+            this.count--;
+            return deleteNode;
+        }else{
+            for(let i = 0; i <index-1; i++){
+                currentNode = currentNode.next;
+            }
+            let deleteNode = currentNode.next;
+            currentNode.next = currentNode.next.next;
+            this.count--;
+            return deleteNode;
+        }
+    }//deletAt
+
+    deleteLast(){
+        this.deleteAt(this.count-1);
+    }//deleteLast
+
+    getNodeAt(index){
+        if(index > this.count | index < 0){
+            throw new Error("범위를 넘어갔습니다");
+        }
+        let currentNode = this.head;
+        
+        for(let i = 0; i <index; i ++){
+            currentNode = currentNode.next;
+        }
+
+        return 
+    }
+
+}//Linked list
 
 export {Node , LinkedList};
