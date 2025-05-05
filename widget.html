@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Widget Tabs</title>
+  <link rel="stylesheet" href="widget.css" />
+</head>
+<body>
+  <div class="tabs-container">
+    <ul class="tabs">
+      <li><a href="#" id="tab1" class="tab-link">About Me</a></li>
+      <li><a href="#" id="tab2" class="tab-link">Projects</a></li>
+      <li><a href="#" id="tab3" class="tab-link">Contact</a></li>
+    </ul>
+    <div class="tab-content-wrapper">
+      <div class="tab-content" id="tab1-content">
+        <article>
+          <h2>About Me</h2>
+          <p>This is about me content.</p>
+        </article>
+      </div>
+      <div class="tab-content" id="tab2-content" style="display: none;">
+        <article>
+          <h2>Projects</h2>
+          <p>Here are some of my projects.</p>
+        </article>
+      </div>
+      <div class="tab-content" id="tab3-content" style="display: none;">
+        <article>
+          <h2>Contact</h2>
+          <p>You can contact me at example@example.com</p>
+        </article>
+      </div>
+    </div>
+  </div>
+  <script src="widget.js"></script>
+</body>
+</html>
