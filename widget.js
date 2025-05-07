@@ -13,6 +13,7 @@ allLinks.forEach((link) => {
     allTabs.forEach((tab) => {
       tab.classList.remove("active");
     });
+    
 
     const target = document.getElementById(`${link.id}-content`);
     if (target) {
