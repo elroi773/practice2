@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!--  
+        
+    -->
+    <script>
+        function solution(s){
+            let answer;
+            let stack = [];
+
+            for (let x of s){ //가지고 옴
+                // console.log(x);
+                if(x === ")"){
+                    while(stack.pop()!=="(");//여는 괄호가 아닐때까지 반복
+                }else{
+                    stack.push(x);
+                }
+            }
+            console.log(stack);
+            answer = stack.join(' ');
+            return answer;
+        }
+        let str = "(A(BC)D)EF(G(H)(IJ)K)LM(N)";
+        console.log(solution(str));
+    </script>
+</body>
+</html>
