@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <!--  
+        입력된 문자열에서 괄호 () 사이에 존재하는 모든 문자를 제거하고 남은 문자만 출력 
+    -->
+    <script>
+      function solution(str) {
+        let answer;
+        let stack = [];
+        let str1 = str.split("");
+
+        for (let i = 0; i <= str1.length; i++) {
+          if (str1[i] === "(") {
+            while (i === ")") { //논리 오류 true 가 될 수 없는 조건임
+              str1[i].pop(); //pop 은 배열에서 써야함 str1[i]는 문자입ㄴ디ㅏ
+            }
+          }else {
+            stack[i] += str1[i]; //stack[i]는 존재하지 않음 push 를 사용 
+          }
+        }
+
+        console.log(stack);
+        return answer;
+      }
+      let str = "(A(BC)D)EF(G(H)(IJ)K)LM(N)";
+      console.log(solution());
+    </script>
+  </body>
+</html>
