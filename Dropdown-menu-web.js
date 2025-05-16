@@ -1,14 +1,20 @@
-const profileBtn = document.getElementById("profileToggle");
-const dropdownMenu = document.getElementById("dropdownMenu");
+const profileBtn = document.getElementById('profileBtn');
+const dropdownMenu = document.getElementById('dropdownMenu');
+const darkModeToggle = document.getElementById('darkModeToggle');
 
-profileBtn.addEventListener("click", () => {
-  dropdownMenu.classList.toggle("hide");
+// Toggle dropdown
+profileBtn.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('active');
 });
 
-
-document.addEventListener("click", (event) => {
-  const isClickInside = dropdownMenu.contains(event.target) || profileBtn.contains(event.target);
-  if (!isClickInside) {
-    dropdownMenu.classList.add("hide");
+// Outside click to close
+document.addEventListener('click', (e) => {
+  if (!dropdownMenu.contains(e.target) && !profileBtn.contains(e.target)) {
+    dropdownMenu.classList.remove('active');
   }
+});
+
+// Dark mode toggle
+darkModeToggle.addEventListener('change', () => {
+  document.body.classList.toggle('dark');
 });
