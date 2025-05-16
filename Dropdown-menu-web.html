@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Dropdown</title>
+  <link rel="stylesheet" href="./Dropdown-menu-web.css" />
+</head>
+<body>
+  <header>
+    <div class="navigation-group">
+      <img src="img/play-icon.png" alt="Message" class="icon" />
+      <div class="notification-wrapper">
+        <img src="img/logo.png" alt="Notification" class="icon" />
+        <div class="notification-count">3</div>
+      </div>
+      <button type="button" class="profile-btn" id="profileToggle">
+        <img src="img/1.jpg" alt="Natalia" />
+      </button>
+    </div>
+
+    <div class="dropdown-wrapper hide" id="dropdownMenu">
+      <div class="profile-card">
+        <div class="profile-header">
+          <img src="img/2.jpg" alt="Natalia" class="profile-avatar" />
+          <div class="profile-info">
+            <h2>Natalia Taylor</h2>
+            <p>natalia.taylor@gmail.com</p>
+          </div>
+        </div>
+        <hr />
+        <ul class="menu">
+          <li>Account</li>
+          <li>Integrations</li>
+          <li>Settings</li>
+          <li>Guide</li>
+          <li>Help</li>
+        </ul>
+        <hr />
+        <div class="plan">
+          <div class="plan-description">
+            <h3>Free Plan</h3>
+            <p>1500 credits</p>
+          </div>
+          <a href="#" class="upgrade-btn">Upgrade</a>
+        </div>
+        <hr />
+        <ul class="menu">
+          <li>Sign Out</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <script src="Dropdown-menu-web.js"></script>
+</body>
+</html>
