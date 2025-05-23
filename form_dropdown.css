@@ -1,0 +1,87 @@
+:root{
+    --primary: #5D43E5;
+    --primary-hover:#523bc3;
+    --bg:#20242F;
+    --secondary:#FEFFFF;
+    --dropzone-bg:#0D111D;
+    --gray:#D3D3D3;
+    --border:#3a3f4c;
+    --dropzone-border:#D4DCE6;
+    --headline:#ebebeb;
+    --text:white;
+    --primary-text:#F2F7FE;
+    --dropzone-over:#20242F;
+}
+
+body{
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+    color: var(--text);
+}
+
+
+::selection{
+    background: var(--primary);
+    color: var(--primary-text);
+}
+
+.dropzone-box{
+    border-radius: 1rem;
+    min-width: 25rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 36rem;
+    border: 1px solid var(--border);
+    width: 100%;
+    background:var(--dropzone-bg);
+}
+
+.dropzone-box h2{
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    color: var(--headline);
+}
+
+.dropzone-box p{
+    font-size: 1.15rem;
+    color: var(--headline);
+}
+
+.dropzone-area{
+    padding: 1rem;
+    position: relative;
+    margin-top: 1.5rem;
+    min-height: 16rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px dashed var(--dropzone-border);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropzone-description{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropzone-area .file-info{
+    font-size: 1.1rem;
+}
+
+.dropzone-area .file-info ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
