@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form_dropdown.css">
+</head>
+<body>
+    <form class = "dropzone-box">
+        <h2>Upload file</h2>
+        <p>Click to upload or drag and drop</p>
+        <div class="dropzone-area">
+            <div class="file-upload-icon"></div>
+            <input type="file" required id = "upload-file" name="upload-file" accept="image/*">
+            <div class="file-info">
+                <p>No Files Selected</p>
+            </div>
+        </div>
+        <div class="dropzone-description">
+            <span>Max file size: 25MB</span>
+        </div>
+        <div class="dropzone-actions">
+            <div class="dropzone-help">
+                Help Center
+            </div>
+        </div>
+        <div>
+            <button type = "reset">Cancel</button>
+            <button id = "submit-button" type="submit">Save</button>
+        </div>
+    </form>
+    <script src="form_dropdown.js"></script>
+</body>
+</html>
