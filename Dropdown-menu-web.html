@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,3 +76,82 @@
   <script src="Dropdown-menu-web.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Dropdown</title>
+  <link rel="stylesheet" href="Dropdown-menu-web.css" />
+</head>
+<body>
+  <header>
+    <div class="navigation_group">
+      <img src="img/play-icon.png" alt="Message" class="icon" />
+      <div class="notification_wrapper">
+        <img src="img/logo.png" alt="Notification" class="icon" />
+        <div class="notification_count">2</div>
+      </div>
+      <button type="button" class="profile_btn" id="profileBtn" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownMenu">
+        <img src="img/1.jpg" alt="Natalia">
+      </button>
+    </div>
+
+    <div class="dropdown_wrapper" id="dropdownMenu">
+      <nav>
+        <div class="profile_wrapper">
+          <img src="img/2.jpg" alt="Natalia" class="profile_avatar" />
+          <div class="profile_info">
+            <h2 class="profile_name">Natalia Taylor</h2>
+            <p class="profile_email">natalia.taylor@gmail.com</p>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <ul class="menu">
+          <li><a href="#"><img src="img/account.svg" class="menu-icon" /> Account</a></li>
+          <li><a href="#"><img src="img/integration.svg" class="menu-icon" /> Integrations</a></li>
+          <li><a href="#"><img src="img/settings.svg" class="menu-icon" /> Settings</a></li>
+          <li><a href="#"><img src="img/guide.svg" class="menu-icon" /> Guide</a></li>
+          <li><a href="#"><img src="img/help.svg" class="menu-icon" /> Help</a></li>
+        </ul>
+
+        <hr class="divider" />
+
+        <div class="plan">
+          <div class="plan_description">
+            <h2>Free Plan</h2>
+            <p>1500 credits</p>
+          </div>
+          <a href="#" class="upgrade-btn">Upgrade</a>
+        </div>
+
+        <hr class="divider" />
+
+        <ul class="menu">
+          <li class="theme-toggle">
+            <img src="img/moon.svg" class="menu-icon" />
+            <span>Dark Mode</span>
+            <label class="switch">
+              <input type="checkbox" id="darkModeToggle" />
+              <span class="slider"></span>
+            </label>
+          </li>
+          <li><a href="#"><img src="img/logout.svg" class="menu-icon" /> Sign Out</a></li>
+        </ul>
+
+        <hr class="divider" />
+        <div class="recent-activity">
+          <p>Last Login: <span>May 15, 2025</span></p>
+          <p>New Messages: <span>2</span></p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <script src="Dropdown-menu-web.js"></script>
+</body>
+</html>
+>>>>>>> a4fca7aa30631759aeb5df1ccea9b0be405ce383
