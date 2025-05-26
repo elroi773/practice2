@@ -1,0 +1,55 @@
+:root {
+    --bg-color: white;
+    --slider-bg: #ccc;
+    --circle-color: white;
+  }
+  
+  body.dark {
+    --bg-color: black;
+    --slider-bg: #333;
+    --circle-color: black;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    transition: background 0.4s;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #switch {
+    display: none;
+  }
+  
+  .toggle {
+    width: 60px;
+    height: 30px;
+    background-color: var(--slider-bg);
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.4s;
+  }
+  
+  .slider {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--circle-color);
+    top: 2px;
+    left: 2px;
+    transition: 0.4s;
+  }
+  
+  #switch:checked + .toggle {
+    background-color: var(--slider-bg);
+  }
+  
+  #switch:checked + .toggle .slider {
+    transform: translateX(30px);
+  }
+  
