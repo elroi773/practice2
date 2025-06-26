@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>message</title>
+    <link rel="stylesheet" href="message.css">
+</head>
+<body>
+    <div class="discussion">
+        <div class="discussion_icons">
+            <div></div>
+            <div class="discussion_icons_settings"></div>
+        </div>
+        <div class="discussion_header">
+            <div class="authed-user"></div>
+            <form id="newcomment_form">
+                <textarea tabindex = "1" cols="150" rows = "4" minlength="5" required placeholder="Write a commet"></textarea>
+                <div class="newcomment_toolbar">
+                    <button id = "reset-button" class = "button--secondary" tabindex = "3" type="button">Reset</button>
+                    <button id = "confirm-button" class="button--primary" tabindex="2" type="submit">Comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="discussion__commnets"></div>
+    <script src="message.js"></script>
+</body>
+</html>
